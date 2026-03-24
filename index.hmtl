@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>foo@bar:~$ cat readme.md</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; border: none; outline: none; font-style: normal; font-weight: normal; text-decoration: none; }
+html { background: #0a0a0a; perspective: 800px; position: relative; }
+body { background: #0a0a0a; color: #33ff33; font-family: 'Courier New', Courier, monospace; font-size: 16px; line-height: 1.5; max-width: 80ch; margin: 0 auto; padding: 1.5ch 2ch 4ch; text-shadow: 0 0 2px rgba(51,255,51,0.9), 0 0 6px rgba(51,255,51,0.5), 0 0 12px rgba(51,255,51,0.2); animation: flicker 8s step-end infinite; transform-origin: center center; }
+body::before { content: ''; position: fixed; inset: 0; background: repeating-linear-gradient(to bottom, transparent 0px, transparent 2px, rgba(0,0,0,0.25) 2px, rgba(0,0,0,0.25) 4px); pointer-events: none; z-index: 9999; }
+html::before { content: ''; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: radial-gradient(ellipse at 50% 50%, transparent 55%, rgba(0,0,0,0.55) 100%); pointer-events: none; z-index: 9998; }
+@keyframes flicker { 0%{opacity:1} 45%{opacity:1} 46%{opacity:0.80} 47%{opacity:1} 48%{opacity:0.90} 49%{opacity:1} 75%{opacity:1} 75.5%{opacity:0.75} 76%{opacity:1} 100%{opacity:1} }
+.shell-prompt { display: block; white-space: pre; margin-bottom: 1.5lh; }
+h1,h2,h3,h4,h5,h6,p,ul,ol,li,dl,dt,dd,table,thead,tbody,tr,th,td,blockquote,pre,code,figure,figcaption,details,summary,strong,b,em,i,a,span,mark,kbd,abbr,del,s,sub,sup,small,label { font-family: 'Courier New', Courier, monospace; font-size: 16px; font-weight: normal; font-style: normal; text-decoration: none; color: inherit; background: transparent; line-height: 1.5; display: block; }
+strong,b,em,i,a,code,mark,kbd,abbr,del,s,sub,sup,small,span,label { display: inline; }
+h1,h2,h3,h4,h5,h6 { margin-top: 1.5lh; }
+p,ul,ol,dl,table,blockquote,pre,details { margin-bottom: 1lh; }
+h1::before { content: '# '; }
+h2::before { content: '## '; }
+h3::before { content: '### '; }
+h4::before { content: '#### '; }
+h5::before { content: '##### '; }
+h6::before { content: '###### '; }
+hr { display: block; margin: 1lh 0; }
+hr::before { content: '---'; display: block; }
+a:hover::after { content: ' (' attr(href) ')'; }
+code::before { content: '`'; }
+code::after  { content: '`'; }
+pre { white-space: pre; overflow-x: auto; padding-left: 4ch; margin-bottom: 1lh; }
+pre code::before, pre code::after { content: ''; }
+blockquote { padding-left: 0; margin-bottom: 1lh; }
+blockquote > * { padding-left: 2ch; }
+blockquote > *::before { content: '> '; margin-left: -2ch; }
+ul,ol { padding-left: 0; list-style: none; margin-bottom: 1lh; }
+ul > li { padding-left: 2ch; text-indent: -2ch; }
+ul > li::before { content: '- '; }
+ul ul { padding-left: 2ch; }
+ul ul > li::before { content: '  - '; }
+ol { counter-reset: li; }
+ol > li { padding-left: 3ch; text-indent: -3ch; counter-increment: li; }
+ol > li::before { content: counter(li) '. '; }
+li.done::before { content: '[x] '; }
+li.todo::before { content: '[ ] '; }
+dd { padding-left: 4ch; }
+table { width: 100%; border-collapse: collapse; }
+thead,tbody { display: block; }
+tr { display: flex; gap: 2ch; }
+th,td { flex: 1; overflow: hidden; white-space: nowrap; }
+kbd::before { content: '<'; }
+kbd::after  { content: '>'; }
+del::before { content: '~~'; }
+del::after  { content: '~~'; }
+summary { display: block; }
+summary::before { content: '[+] '; }
+details[open] summary::before { content: '[-] '; }
+details > *:not(summary) { padding-left: 4ch; }
+details { margin-bottom: 1lh; }
+img { display: none; }
+figcaption::before { content: '[img: '; }
+figcaption::after  { content: ']'; }
+figure { margin-bottom: 1lh; }
+::selection { background: #33ff33; color: #0a0a0a; text-shadow: none; }
+::-webkit-scrollbar { width: 0; }
+.cur { display: inline-block; width: 1ch; height: 1lh; background: #33ff33; vertical-align: text-bottom; animation: blink 1s step-start infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+</style>
+</head>
+<body>
+
+<span class="shell-prompt">foo@bar:~$ cat readme.md</span>
+
+<h1>System Administration Guide</h1>
+
+<p>This document covers basic system administration tasks for Debian-based Linux distributions. All commands assume root or sudo access.</p>
+
+<hr>
+
+<h2>Getting Started</h2>
+
+<p>Before proceeding, ensure your package lists are up to date. Failure to do so may result in dependency conflicts or installation of outdated software.</p>
+
+<p>Links open in the same tab by default. See <a href="https://debian.org/doc">the Debian docs</a> for further reference.</p>
+
+<h3>Prerequisites</h3>
+
+<ul>
+  <li>Debian 11 or later</li>
+  <li>Root or sudo access</li>
+  <li>Network connectivity
+    <ul>
+      <li>Wired preferred</li>
+      <li>Wireless requires firmware</li>
+    </ul>
+  </li>
+  <li>At least 2GB free disk space</li>
+</ul>
+
+<h2>Installation</h2>
+
+<p>Update the package index, then install the required packages:</p>
+
+<pre><code>sudo apt update
+sudo apt upgrade -y
+sudo apt install -y vim git curl wget htop tmux</code></pre>
+
+<p>Verify the installation completed without errors. Check the exit code with <code>echo $?</code> — a value of <code>0</code> indicates success.</p>
+
+<h3>Configuration</h3>
+
+<ol>
+  <li>Edit /etc/apt/sources.list to add contrib and non-free</li>
+  <li>Run apt update again</li>
+  <li>Install any additional firmware</li>
+  <li>Reboot the system</li>
+</ol>
+
+<h2>User Management</h2>
+
+<h3>Adding a User</h3>
+
+<pre><code>useradd -m -s /bin/bash -G sudo newuser
+passwd newuser</code></pre>
+
+<h3>Removing a User</h3>
+
+<pre><code>userdel -r olduser</code></pre>
+
+<p>The <code>-r</code> flag removes the home directory. Omit it to preserve user files.</p>
+
+<h2>Common Tasks</h2>
+
+<h4>Disk Usage</h4>
+
+<pre><code>df -h
+du -sh /var/log/*</code></pre>
+
+<h4>Running Processes</h4>
+
+<pre><code>ps aux | grep nginx
+kill -9 &lt;PID&gt;</code></pre>
+
+<h4>Task Checklist</h4>
+
+<ul>
+  <li class="done">Configure SSH key auth</li>
+  <li class="done">Disable root login</li>
+  <li class="done">Set up ufw firewall</li>
+  <li class="todo">Configure fail2ban</li>
+  <li class="todo">Schedule log rotation</li>
+  <li class="todo">Set up automated backups</li>
+</ul>
+
+<h2>Reference</h2>
+
+<h3>Key Bindings</h3>
+
+<p>In tmux: <kbd>Ctrl</kbd>+<kbd>b</kbd> then <kbd>c</kbd> creates a new window. <kbd>Ctrl</kbd>+<kbd>b</kbd> then <kbd>d</kbd> detaches the session.</p>
+
+<h3>Glossary</h3>
+
+<dl>
+  <dt>daemon</dt>
+  <dd>A background process not attached to a controlling terminal.</dd>
+  <dt>inode</dt>
+  <dd>A data structure storing file metadata excluding name and content.</dd>
+  <dt>PID</dt>
+  <dd>Process Identifier. Unique integer assigned to each running process.</dd>
+</dl>
+
+<h3>Process Table</h3>
+
+<table>
+  <thead>
+    <tr><th>name</th><th>pid</th><th>cpu%</th><th>mem%</th><th>state</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>init</td><td>1</td><td>0.0</td><td>0.1</td><td>Ss</td></tr>
+    <tr><td>syslogd</td><td>312</td><td>0.1</td><td>0.2</td><td>Ss</td></tr>
+    <tr><td>nginx</td><td>1024</td><td>0.4</td><td>1.1</td><td>S</td></tr>
+    <tr><td>bash</td><td>2048</td><td>0.0</td><td>0.3</td><td>S+</td></tr>
+  </tbody>
+</table>
+
+<h3>Notes</h3>
+
+<blockquote>
+  <p>Never run untrusted scripts as root. Always read scripts before executing them, especially when piping curl output directly to bash.</p>
+</blockquote>
+
+<h3>Hidden Details</h3>
+
+<details>
+  <summary>Kernel panic log excerpt</summary>
+  <pre><code>BUG: unable to handle kernel NULL pointer dereference
+IP: [&lt;ffffffff8102a675&gt;] ? smp_apic_timer_interrupt+0x35/0xa0
+Oops: 0002 [#1] SMP
+Modules linked in: e1000 serio_raw</code></pre>
+</details>
+
+<details>
+  <summary>Environment variables</summary>
+  <pre><code>PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin
+SHELL=/bin/bash
+TERM=xterm-256color
+LANG=en_US.UTF-8</code></pre>
+</details>
+
+<hr>
+
+<span class="shell-prompt">foo@bar:~$ <span class="cur"></span></span>
+
+</body>
+</html>
