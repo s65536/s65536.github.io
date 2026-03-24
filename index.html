@@ -73,34 +73,88 @@ figure { margin-bottom: 1lh; }
   <h1><strong>Hardware &amp; Netwerken</strong></h1>
  
   <h2><strong>Stekkerdozen</strong></h2>
-  <p>Als je meerdere devices met elkaar wilt verbinden, heb je een centraal punt nodig waar alle kabels samenkomen. De eenvoudigste versie daarvan is een hub of repeater. Een repeater koppelt twee kabels aan elkaar en versterkt het signaal, zodat data over een langere afstand verstuurd kan worden. Een hub doet hetzelfde maar voor meerdere kabels tegelijk. Het nadeel is dat een hub niet nadenkt. Hij stuurt alles gewoon door naar alle aangesloten devices, ook als dat helemaal niet nodig is.</p>
+  
+  <p>
+    Als je meerdere devices met elkaar wilt verbinden, heb je een centraal punt nodig waar alle kabels samenkomen.
+    De eenvoudigste versie daarvan is een hub of repeater. Een repeater koppelt twee kabels aan elkaar en versterkt het signaal,
+    zodat data over een langere afstand verstuurd kan worden. Een hub doet hetzelfde maar voor meerdere kabels tegelijk.
+    Het nadeel is dat een hub niet nadenkt. Hij stuurt alles gewoon door naar alle aangesloten devices, ook als dat helemaal niet nodig is.
+  </p>
  
   <h2><strong>Sla een brug!</strong></h2>
-  <p>Een bridge is een stuk slimmer dan een hub. Hij werkt een laagje hoger en begrijpt daardoor de data die er doorheen gaat. Hierdoor kan een bridge twee networks verbinden die op een andere manier werken, zoals Ethernet en Token Ring. De data wordt dan automatisch omgezet naar het juiste formaat. Omdat een bridge software gebruikt, kun je hem ook programmeren om bepaalde packets wel of niet door te laten.</p>
+  
+  <p>
+    Een bridge is een stuk slimmer dan een hub. Hij werkt een laagje hoger en begrijpt daardoor de data die er doorheen gaat.
+    Hierdoor kan een bridge twee networks verbinden die op een andere manier werken, zoals Ethernet en Token Ring.
+    De data wordt dan automatisch omgezet naar het juiste formaat. Omdat een bridge software gebruikt,
+    kun je hem ook programmeren om bepaalde packets wel of niet door te laten.
+  </p>
  
   <h2><strong>Switch</strong></h2>
-  <p>Een switch is een slimmere versie van een bridge. In plaats van packets naar alle devices te sturen, leert een switch welk device op welke port zit en stuurt hij packets alleen naar de juiste bestemming. Hij doet dit op twee manieren: bij store-and-forward wacht hij tot het hele packet binnen is voordat hij het doorstuurt. Bij cut-through stuurt hij het packet al door terwijl het nog binnenkomt. Dat is sneller, maar werkt minder goed als devices met verschillende snelheden werken.</p>
+  
+  <p>
+    Een switch is een slimmere versie van een bridge. In plaats van packets naar alle devices te sturen,
+    leert een switch welk device op welke port zit en stuurt hij packets alleen naar de juiste bestemming. Hij doet dit op twee manieren:
+    bij store-and-forward wacht hij tot het hele packet binnen is voordat hij het doorstuurt.
+    Bij cut-through stuurt hij het packet al door terwijl het nog binnenkomt. Dat is sneller, maar werkt minder goed als devices met verschillende snelheden werken.
+  </p>
  
   <h2><strong>Bandbreedte</strong></h2>
-  <p>De bandwidth is de maximale hoeveelheid data die tegelijk over een network kan. Hoe meer devices tegelijk data versturen, hoe drukker het wordt en hoe langzamer alles gaat. Een switch helpt dit probleem op te lossen door packets alleen naar de juiste bestemming te sturen in plaats van naar iedereen. Zo blijft het network rustig en kunnen devices sneller met elkaar communiceren.</p>
+
+  <p>
+    De bandwidth is de maximale hoeveelheid data die tegelijk over een network kan. Hoe meer devices tegelijk data versturen,
+    hoe drukker het wordt en hoe langzamer alles gaat. Een switch helpt dit probleem op te lossen door packets alleen naar de juiste bestemming
+    te sturen in plaats van naar iedereen. Zo blijft het network rustig en kunnen devices sneller met elkaar communiceren.
+  </p>
  
   <h2><strong>Hoe werkt een switch?</strong></h2>
-  <p>Een switch leert zichzelf welk device op welke port is aangesloten. Hij doet dit door het source address van elk packet dat binnenkomt te onthouden. De volgende keer dat er een packet voor dat device binnenkomt, weet de switch precies waar hij het naartoe moet sturen. Komt er een packet binnen voor een address dat hij nog niet kent? Dan stuurt hij het even naar alle ports, totdat hij het juiste address heeft gevonden en onthouden.</p>
+  
+  <p>
+    Een switch leert zichzelf welk device op welke port is aangesloten. Hij doet dit door het source address van elk packet dat binnenkomt te onthouden.
+    De volgende keer dat er een packet voor dat device binnenkomt, weet de switch precies waar hij het naartoe moet sturen.
+    Komt er een packet binnen voor een address dat hij nog niet kent? Dan stuurt hij het even naar alle ports, totdat hij het juiste address heeft gevonden en onthouden.
+  </p>
  
   <h2><strong>Verkeer</strong></h2>
-  <p>Doordat een switch zo goed bijhoudt waar elk device zit, is er veel minder onnodig netwerkverkeer. Moderne switches kunnen duizenden addresses onthouden, waardoor bijna elk packet direct op de juiste plek terechtkomt. Dit zorgt ervoor dat devices elkaar niet in de weg zitten en de connection voor iedereen snel en stabiel blijft.</p>
+  
+  <p>
+    Doordat een switch zo goed bijhoudt waar elk device zit, is er veel minder onnodig netwerkverkeer.
+    Moderne switches kunnen duizenden addresses onthouden, waardoor bijna elk packet direct op de juiste plek terechtkomt.
+    Dit zorgt ervoor dat devices elkaar niet in de weg zitten en de connection voor iedereen snel en stabiel blijft.
+  </p>
  
   <h2><strong>Types</strong></h2>
-  <p>Er zijn drie soorten switches. De gewone switch is de simpelste variant, alle ports werken op dezelfde snelheid, zoals allemaal 100 Mbit/s. De conversieswitch is handiger als je devices hebt met verschillende snelheden, zoals oudere computers op 10 Mbit/s en nieuwere op 100 Mbit/s. Hij zorgt ervoor dat ze toch goed met elkaar kunnen communiceren. De switched hub is een combinatie van beide: een deel van de ports werkt als switch, de rest als gewone hub.</p>
+  
+  <p>
+    Er zijn drie soorten switches. De gewone switch is de simpelste variant, alle ports werken op dezelfde snelheid, zoals allemaal 100 Mbit/s.
+    De conversieswitch is handiger als je devices hebt met verschillende snelheden, zoals oudere computers op 10 Mbit/s en nieuwere op 100 Mbit/s.
+    Hij zorgt ervoor dat ze toch goed met elkaar kunnen communiceren. De switched hub is een combinatie van beide: een deel van de ports werkt als switch,
+    de rest als gewone hub.
+  </p>
  
   <h2><strong>Routers, bruggen en gateways</strong></h2>
-  <p>Wil je niet alleen devices maar hele networks met elkaar verbinden? Dan heb je een krachtiger apparaat nodig. Afhankelijk van hoe de networks eruitzien en hoe ze werken, kies je voor een bridge, router of gateway. Elk apparaat werkt op een ander niveau en heeft zijn eigen manier om networks aan elkaar te koppelen.</p>
+  
+  <p>
+    Wil je niet alleen devices maar hele networks met elkaar verbinden? Dan heb je een krachtiger apparaat nodig. Afhankelijk van hoe de networks eruitzien en hoe ze werken,
+    kies je voor een bridge, router of gateway. Elk apparaat werkt op een ander niveau en heeft zijn eigen manier om networks aan elkaar te koppelen.
+  </p>
  
   <h2><strong>Router</strong></h2>
-  <p>Een router is slimmer dan een bridge en werkt op een hoger niveau in het network. Hij verbindt networks die op dezelfde manier werken maar toch van elkaar verschillen, zoals een thuisnetwork dat verbinding maakt met het internet. Het slimme aan een router is dat hij meerdere routes kent en altijd kiest voor de snelste en beste weg. Routers kunnen ook met elkaar communiceren om samen de beste route door een groot en ingewikkeld network te bepalen.</p>
+  
+  <p>
+    Een router is slimmer dan een bridge en werkt op een hoger niveau in het network. Hij verbindt networks die op dezelfde manier werken maar toch van elkaar verschillen,
+    zoals een thuisnetwork dat verbinding maakt met het internet. Het slimme aan een router is dat hij meerdere routes kent en altijd kiest voor de snelste en beste weg.
+    Routers kunnen ook met elkaar communiceren om samen de beste route door een groot en ingewikkeld network te bepalen.
+  </p>
  
   <h2><strong>Gateway</strong></h2>
-  <p>Een gateway is het meest krachtige en complexe apparaat van allemaal. Waar een router networks verbindt die op dezelfde manier werken, kan een gateway ook networks verbinden die volledig anders zijn opgebouwd. Hij haalt alle network-specifieke informatie uit de data, verpakt het opnieuw in een formaat dat het andere network begrijpt en stuurt het dan door. Vergelijk het met een tolk die niet alleen een andere taal spreekt, maar ook de cultuur en gewoontes van beide kanden begrijpt.</p>
+  
+  <p>
+    Een gateway is het meest krachtige en complexe apparaat van allemaal. Waar een router networks verbindt die op dezelfde manier werken,
+    kan een gateway ook networks verbinden die volledig anders zijn opgebouwd. Hij haalt alle network-specifieke informatie uit de data,
+    verpakt het opnieuw in een formaat dat het andere network begrijpt en stuurt het dan door. Vergelijk het met een tolk die niet alleen een andere taal spreekt,
+    maar ook de cultuur en gewoontes van beide kanden begrijpt.
+  </p>
 </div>
  
 <span class="shell-prompt">foo@bar:~$ <span class="cur"></span></span>
