@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+  color: inherit;
+  background: transparent;
+  line-height: 1.5;
+  display: block;
+}
+
+html {
+  background: #0a0a0a;
+  perspective: 800px;
+  position: relative;
+}
+
+body {
+  background: #0a0a0a;
+  color: #33ff33;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 80ch;
+  margin: 0 auto;
+  padding: 1.5ch 2ch 4ch;
+  text-shadow: 0 0 2px rgba(51,255,51,0.9), 0 0 6px rgba(51,255,51,0.5), 0 0 12px rgba(51,255,51,0.2);
+  animation: flicker 8s step-end infinite;
+  transform-origin: center center;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 2px,
+    rgba(0,0,0,0.25) 2px,
+    rgba(0,0,0,0.25) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+@keyframes flicker {
+  0%   { opacity: 1; }
+  45%  { opacity: 1; }
+  46%  { opacity: 0.80; }
+  47%  { opacity: 1; }
+  48%  { opacity: 0.90; }
+  49%  { opacity: 1; }
+  75%  { opacity: 1; }
+  75.5%{ opacity: 0.75; }
+  76%  { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+.shell-prompt {
+  display: block;
+  white-space: pre;
+  margin-bottom: 1.5lh;
+}
+
+strong, b, em, i, a, span, label {
+  display: inline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 1.5lh;
+}
+
+h1::before { content: '# '; }
+h2::before { content: '## '; }
+h3::before { content: '### '; }
+h4::before { content: '#### '; }
+h5::before { content: '##### '; }
+h6::before { content: '###### '; }
+
+::selection {
+  background: #33ff33;
+  color: #0a0a0a;
+  text-shadow: none;
+}
+
+.cur {
+  display: inline-block;
+  width: 1ch;
+  height: 1lh;
+  background: #33ff33;
+  vertical-align: text-bottom;
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
