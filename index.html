@@ -4,65 +4,109 @@
 <meta charset="UTF-8">
 <title>foo@bar:~$ cat readme.md</title>
 <style>
-* { box-sizing: border-box; margin: 0; padding: 0; border: none; outline: none; font-style: normal; font-weight: normal; text-decoration: none; }
-html { background: #0a0a0a; perspective: 800px; position: relative; }
-body { background: #0a0a0a; color: #33ff33; font-family: 'Courier New', Courier, monospace; font-size: 16px; line-height: 1.5; max-width: 80ch; margin: 0 auto; padding: 1.5ch 2ch 4ch; text-shadow: 0 0 2px rgba(51,255,51,0.9), 0 0 6px rgba(51,255,51,0.5), 0 0 12px rgba(51,255,51,0.2); animation: flicker 8s step-end infinite; transform-origin: center center; }
-body::before { content: ''; position: fixed; inset: 0; background: repeating-linear-gradient(to bottom, transparent 0px, transparent 2px, rgba(0,0,0,0.25) 2px, rgba(0,0,0,0.25) 4px); pointer-events: none; z-index: 9999; }
-html::before { content: ''; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: radial-gradient(ellipse at 50% 50%, transparent 55%, rgba(0,0,0,0.55) 100%); pointer-events: none; z-index: 9998; }
-@keyframes flicker { 0%{opacity:1} 45%{opacity:1} 46%{opacity:0.80} 47%{opacity:1} 48%{opacity:0.90} 49%{opacity:1} 75%{opacity:1} 75.5%{opacity:0.75} 76%{opacity:1} 100%{opacity:1} }
-.shell-prompt { display: block; white-space: pre; margin-bottom: 1.5lh; }
-h1,h2,h3,h4,h5,h6,p,ul,ol,li,dl,dt,dd,table,thead,tbody,tr,th,td,blockquote,pre,code,figure,figcaption,details,summary,strong,b,em,i,a,span,mark,kbd,abbr,del,s,sub,sup,small,label { font-family: 'Courier New', Courier, monospace; font-size: 16px; font-weight: normal; font-style: normal; text-decoration: none; color: inherit; background: transparent; line-height: 1.5; display: block; }
-strong,b,em,i,a,code,mark,kbd,abbr,del,s,sub,sup,small,span,label { display: inline; }
-h1,h2,h3,h4,h5,h6 { margin-top: 1.5lh; }
-p,ul,ol,dl,table,blockquote,pre,details { margin-bottom: 1lh; }
-h1::before { content: '# '; }
-h2::before { content: '## '; }
-h3::before { content: '### '; }
-h4::before { content: '#### '; }
-h5::before { content: '##### '; }
-h6::before { content: '###### '; }
-hr { display: block; margin: 1lh 0; }
-hr::before { content: '---'; display: block; }
-a:hover::after { content: ' (' attr(href) ')'; }
-code::before { content: '`'; }
-code::after  { content: '`'; }
-pre { white-space: pre; overflow-x: auto; padding-left: 4ch; margin-bottom: 1lh; }
-pre code::before, pre code::after { content: ''; }
-blockquote { padding-left: 0; margin-bottom: 1lh; }
-blockquote > * { padding-left: 2ch; }
-blockquote > *::before { content: '> '; margin-left: -2ch; }
-ul,ol { padding-left: 0; list-style: none; margin-bottom: 1lh; }
-ul > li { padding-left: 2ch; text-indent: -2ch; }
-ul > li::before { content: '- '; }
-ul ul { padding-left: 2ch; }
-ul ul > li::before { content: '  - '; }
-ol { counter-reset: li; }
-ol > li { padding-left: 3ch; text-indent: -3ch; counter-increment: li; }
-ol > li::before { content: counter(li) '. '; }
-li.done::before { content: '[x] '; }
-li.todo::before { content: '[ ] '; }
-dd { padding-left: 4ch; }
-table { width: 100%; border-collapse: collapse; }
-thead,tbody { display: block; }
-tr { display: flex; gap: 2ch; }
-th,td { flex: 1; overflow: hidden; white-space: nowrap; }
-kbd::before { content: '<'; }
-kbd::after  { content: '>'; }
-del::before { content: '~~'; }
-del::after  { content: '~~'; }
-summary { display: block; }
-summary::before { content: '[+] '; }
-details[open] summary::before { content: '[-] '; }
-details > *:not(summary) { padding-left: 4ch; }
-details { margin-bottom: 1lh; }
-img { display: none; }
-figcaption::before { content: '[img: '; }
-figcaption::after  { content: ']'; }
-figure { margin-bottom: 1lh; }
-::selection { background: #33ff33; color: #0a0a0a; text-shadow: none; }
-::-webkit-scrollbar { width: 0; }
-.cur { display: inline-block; width: 1ch; height: 1lh; background: #33ff33; vertical-align: text-bottom; animation: blink 1s step-start infinite; }
-@keyframes blink { 50% { opacity: 0; } }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: none;
+    color: inherit;
+    background: transparent;
+    line-height: 1.5;
+    display: block;
+  }
+  
+  html {
+    background: #0a0a0a;
+    perspective: 800px;
+    position: relative;
+  }
+  
+  body {
+    background: #0a0a0a;
+    color: #33ff33;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 80ch;
+    margin: 0 auto;
+    padding: 1.5ch 2ch 4ch;
+    text-shadow: 0 0 2px rgba(51,255,51,0.9), 0 0 6px rgba(51,255,51,0.5), 0 0 12px rgba(51,255,51,0.2);
+    animation: flicker 8s step-end infinite;
+    transform-origin: center center;
+  }
+  
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 2px,
+      rgba(0,0,0,0.25) 2px,
+      rgba(0,0,0,0.25) 4px
+    );
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  @keyframes flicker {
+    0%{opacity:1}
+    45%{opacity:1}
+    46%{opacity:0.80}
+    47%{opacity:1}
+    48%{opacity:0.90}
+    49%{opacity:1}
+    75%{opacity:1}
+    75.5%{opacity:0.75}
+    76%{opacity:1}
+    100%{opacity:1}
+  }
+  
+  .shell-prompt {
+    display: block;
+    white-space: pre;
+    margin-bottom: 1.5lh;
+  }
+  
+  strong, b, em, i, a, span,label {
+    display: inline;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 1.5lh;
+  }
+  h1::before { content: '# '; }
+  h2::before { content: '## '; }
+  h3::before { content: '### '; }
+  h4::before { content: '#### '; }
+  h5::before { content: '##### '; }
+  h6::before { content: '###### '; }
+  
+  ::selection {
+    background: #33ff33;
+    color: #0a0a0a;
+    text-shadow: none;
+  }
+  .cur {
+    display: inline-block;
+    width: 1ch;
+    height: 1lh;
+    background: #33ff33;
+    vertical-align: text-bottom;
+    animation: blink 1s step-start infinite;
+  }
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
 </style>
 </head>
 <body>
